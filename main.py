@@ -23,7 +23,7 @@ missed_values = df.isna().sum()
 missed_values = missed_values[missed_values > 0]
 
 if len(missed_values) > 0:
-    fig, ax = plt.subplot()
+    fig, ax = plt.subplots()
     sns.barplot(x=missed_values.index, y=missed_values.values)
     ax.set_title('Попуски в столбцах')
     ax.set_ylabel('колличество пропусков')
