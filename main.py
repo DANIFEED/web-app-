@@ -37,7 +37,7 @@ if len(missed_values) != 0:
     if button:
         df_filled = df[missed_values.index].copy()
         for col in df_filled.columns:
-            if df_filled[col] == 'object':
+            if df_filled[col].dtype == 'object':
                 df_filled[col] = df_filled[col].fillna(df_filled[col].mode()[0])
             else:
                 df_filled[col] = df_filled[col].fillna(df_filled[col].mean())
